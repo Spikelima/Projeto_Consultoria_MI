@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Proposta Mentor Interativa - Rhodia-Solvay Brasil</title>
+    <meta name="description" content="Organização e Gestão Centralizada das Ações T&D - Proposta técnica da Mentor Interativa para Rhodia-Solvay Brasil">
+    <meta name="keywords" content="treinamento, desenvolvimento, T&D, gestão, Rhodia-Solvay, Mentor Interativa">
+    <meta name="author" content="Mentor Interativa">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proposta-mentor-rhodia.app">
+    <meta property="og:title" content="Proposta Mentor Interativa - Rhodia-Solvay">
+    <meta property="og:description" content="Organização e Gestão Centralizada das Ações T&D">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://proposta-mentor-rhodia.app">
+    <meta property="twitter:title" content="Proposta Mentor Interativa - Rhodia-Solvay">
+    <meta property="twitter:description" content="Organização e Gestão Centralizada das Ações T&D">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiUHJvcG9zdGEgTWVudG9yIEludGVyYXRpdmEiLCJzaG9ydF9uYW1lIjoiTWVudG9yIFByb3Bvc3RhIiwic3RhcnRfdXJsIjoiLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmY2ZjZjkiLCJ0aGVtZV9jb2xvciI6IiNGRjhDMDAiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M00zUnZjbWN2TWpBd01DOXpkbWNpSUhkcFpIUm9QU0l4TWpnaUlHaGxhV2RvZEQwaU1USTRJajRLUEhKbFkzUWdkMmxrZEdnOUlqRXlPQ0lnYUdWcFoyaDBQU0l4TWpnaUlHWnBiR3c5SWlOR1JqaERNREFpTHo0S1BIUmxlSFFnZUQwaU5qUWlJSGs5SWpZMElpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJaUJtYVd4c1BTSWpabVpaaUNCbWIyNTBMWE5wZW1VOUlqRTJJaUJtYjI1MExYZGxhV2RvZEQwaVltOXNaQ0krVFE4dmRHVjRkRDRLUEM5emRtYysiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCIsInNpemVzIjoiYW55In1dfQ==">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#FF8C00">
+    <meta name="msapplication-TileColor" content="#FF8C00">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4Ij4KPHJlY3Qgd2lkdGg9IjEyOCIgaGVpZ2h0PSIxMjgiIGZpbGw9IiNGRjhDMDAiLz4KPHRleHQgeD0iNjQiIHk9IjY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCI+TTwvdGV4dD4KPC9zdmc+">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <div class="logo">
+                <div class="logo-text">MENTOR INTERATIVA</div>
+            </div>
+            
+            <!-- Mobile hamburger button -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Desktop navigation -->
+            <nav class="nav desktop-nav">
+                <button class="nav-btn active" data-section="home">Home</button>
+                <button class="nav-btn" data-section="contexto">Contexto</button>
+                <button class="nav-btn" data-section="escopo">Escopo</button>
+                <button class="nav-btn" data-section="cronograma">Cronograma</button>
+                <button class="nav-btn" data-section="investimento">Investimento</button>
+                <button class="nav-btn" data-section="resultados">Resultados</button>
+            </nav>
+        </div>
+        
+        <!-- Mobile navigation overlay -->
+        <nav class="nav mobile-nav">
+            <div class="mobile-nav-content">
+                <button class="nav-btn active" data-section="home">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </button>
+                <button class="nav-btn" data-section="contexto">
+                    <span class="nav-icon">🎯</span>
+                    <span>Contexto & Desafios</span>
+                </button>
+                <button class="nav-btn" data-section="escopo">
+                    <span class="nav-icon">📋</span>
+                    <span>Escopo & Entregas</span>
+                </button>
+                <button class="nav-btn" data-section="cronograma">
+                    <span class="nav-icon">📅</span>
+                    <span>Cronograma</span>
+                </button>
+                <button class="nav-btn" data-section="investimento">
+                    <span class="nav-icon">⏱️</span>
+                    <span>Investimento</span>
+                </button>
+                <button class="nav-btn" data-section="resultados">
+                    <span class="nav-icon">🚀</span>
+                    <span>Resultados</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Home Section - Canvas One Page -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <h1>Proposta Técnica Comercial</h1>
+                    <h2>Organização e Gestão Centralizada das Ações T&D</h2>
+                    <p class="hero-subtitle">Rhodia-Solvay Brasil</p>
+                    <div class="hero-badges">
+                        <span class="badge">8 semanas</span>
+                        <span class="badge">300 horas</span>
+                    </div>
+                </div>
+
+                <div class="canvas">
+                    <div class="canvas-grid">
+                        <div class="canvas-card cliente">
+                            <div class="card-header">
+                                <div class="card-icon">🏢</div>
+                                <h3>Cliente</h3>
+                            </div>
+                            <p><strong>Rhodia-Solvay Brasil</strong></p>
+                            <div class="highlight">Líder global em química avançada</div>
+                        </div>
+                        
+                        <div class="canvas-card problema">
+                            <div class="card-header">
+                                <div class="card-icon">⚠️</div>
+                                <h3>Problema</h3>
+                            </div>
+                            <ul>
+                                <li>Falta de organização centralizada</li>
+                                <li>Processos descentralizados</li>
+                                <li>Dificuldades na retenção do conhecimento</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="canvas-card solucao">
+                            <div class="card-header">
+                                <div class="card-icon">💡</div>
+                                <h3>Solução</h3>
+                            </div>
+                            <p>Projeto estruturado em 7 etapas para organização e gestão centralizada do T&D com LMS incluído</p>
+                            <div class="highlight">Metodologia comprovada</div>
+                        </div>
+                        
+                        <div class="canvas-card beneficios">
+                            <div class="card-header">
+                                <div class="card-icon">✨</div>
+                                <h3>Benefícios</h3>
+                            </div>
+                            <ul>
+                                <li>Excelência em gestão do todo</li>
+                                <li>Compliance e rastreabilidade</li>
+                                <li>Modelo de governança ideal</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="canvas-card investimento">
+                            <div class="card-header">
+                                <div class="card-icon">⏱️</div>
+                                <h3>Investimento</h3>
+                            </div>
+                            <div class="value">300 horas</div>
+                            <div class="timeline">8 semanas • 7 etapas</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-nav">
+                        <p>Navegue pelas seções:</p>
+                        <div class="quick-nav-buttons">
+                            <button class="btn btn--outline btn--sm" data-section="contexto">Ver Contexto</button>
+                            <button class="btn btn--outline btn--sm" data-section="escopo">Ver Escopo</button>
+                            <button class="btn btn--primary btn--sm" data-section="investimento">Ver Investimento</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contexto & Desafios Section -->
+        <section id="contexto" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contexto & Desafios Identificados</h2>
+                    <p>Principais "dores" identificadas nas reuniões com a Rhodia-Solvay</p>
+                </div>
+                
+                <div class="challenges-grid">
+                    <div class="challenge-card high-impact">
+                        <div class="challenge-header">
+                            <div class="challenge-icon">📊</div>
+                            <div class="impact-badge high">Alto Impacto</div>
+                        </div>
+                        <h3>Organização Descentralizada</h3>
+                        <p>Falta de organização centralizada e padronização nos registros, dificultando a visão consolidada das ações de treinamento.</p>
+                        <div class="challenge-metrics">
+                            <span>Impacto: Alto</span>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card high-impact">
+                        <div class="challenge-header">
+                            <div class="challenge-icon">🔄</div>
+                            <div class="impact-badge high">Alto Impacto</div>
+                        </div>
+                        <h3>Processos Fragmentados</h3>
+                        <p>Processos descentralizados e ferramentas diversas que dificultam a gestão do todo organizacional.</p>
+                        <div class="challenge-metrics">
+                            <span>Impacto: Alto</span>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card medium-impact">
+                        <div class="challenge-header">
+                            <div class="challenge-icon">🧠</div>
+                            <div class="impact-badge medium">Médio Impacto</div>
+                        </div>
+                        <h3>Perda de Conhecimento</h3>
+                        <p>Dificuldades na retenção do conhecimento organizacional e na transferência de experiências.</p>
+                        <div class="challenge-metrics">
+                            <span>Impacto: Médio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="objectives-section">
+                    <h3>Objetivos do Projeto</h3>
+                    <div class="objectives-grid">
+                        <div class="objective-item">
+                            <div class="objective-icon">🎯</div>
+                            <p>Excelência em gestão do todo, favorecendo compliance e rastreabilidade</p>
+                        </div>
+                        <div class="objective-item">
+                            <div class="objective-icon">🏗️</div>
+                            <p>Desenhar o modelo organizacional e de governança ideal para o T&D centralizado e integrado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Escopo & Entregas Section -->
+        <section id="escopo" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Escopo & Entregas</h2>
+                    <p>7 etapas estruturadas para resolver os desafios identificados</p>
+                </div>
+                
+                <!-- Visão Geral do Projeto - Nova Barra -->
+                <div class="project-overview-timeline">
+                    <div class="overview-timeline-header">
+                        <h3>📋 Visão Geral do Projeto</h3>
+                        <p>O projeto compreende 7 etapas integradas: diagnóstico, organização centralizada, modelo organizacional, implementação, especificação LMS e gestão do conhecimento.</p>
+                    </div>
+                    
+                    <div class="timeline-stages">
+                        <div class="stage-item" data-stage="3.1">
+                            <div class="stage-marker">
+                                <span class="stage-icon">🚀</span>
+                                <div class="stage-number">1</div>
+                            </div>
+                            <div class="stage-label">3.1 Kickoff</div>
+                        </div>
+                        
+                        <div class="stage-connector"></div>
+                        
+                        <div class="stage-item" data-stage="3.2">
+                            <div class="stage-marker">
+                                <span class="stage-icon">🔍</span>
+                                <div class="stage-number">2</div>
+                            </div>
+                            <div class="stage-label">3.2 Diagnóstico</div>
+                        </div>
+                        
+                        <div class="stage-connector"></div>
+                        
+                        <div class="stage-item" data-stage="3.3">
+                            <div class="stage-marker">
+                                <span class="stage-icon">🏗️</span>
+                                <div class="stage-number">3</div>
+                            </div>
+                            <div class="stage-label">3.3 Modelo Organizacional</div>
+                        </div>
+                        
+                        <div class="stage-connector"></div>
+                        
+                        <div class="stage-item" data-stage="3.4">
+                            <div class="stage-marker">
+                                <span class="stage-icon">📋</span>
+                                <div class="stage-number">4</div>
+                            </div>
+                            <div class="stage-label">3.4 Plano de Implementação</div>
+                        </div>
+                        
+                        <div class="stage-connector"></div>
+                        
+                        <div class="stage-item" data-stage="3.5">
+                            <div class="stage-marker">
+                                <span class="stage-icon">💻</span>
+                                <div class="stage-number">5</div>
+                            </div>
+                            <div class="stage-label">3.5 Especificação LMS</div>
+                        </div>
+                        
+                        <div class="stage-connector"></div>
+                        
+                        <div class="stage-item" data-stage="3.6">
+                            <div class="stage-marker">
+                                <span class="stage-icon">📚</span>
+                                <div class="stage-number">6</div>
+                            </div>
+                            <div class="stage-label">3.6 Gestão do Conhecimento</div>
+                        </div>
+                        
+                        <div class="stage-connector"></div>
+                        
+                        <div class="stage-item optional" data-stage="3.7">
+                            <div class="stage-marker">
+                                <span class="stage-icon">🤝</span>
+                                <div class="stage-number">7</div>
+                            </div>
+                            <div class="stage-label">3.7 Implementação Assistida (opc.)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cards das Etapas com Accordions -->
+                <div class="etapas-container">
+                    
+                    <!-- Etapa 3.1 -->
+                    <div class="etapa-card" data-etapa="3.1">
+                        <div class="etapa-header">
+                            <div class="etapa-icon">🚀</div>
+                            <div class="etapa-info">
+                                <h3>Etapa 3.1 - Reunião de Kickoff e Plano de Trabalho</h3>
+                                <div class="etapa-meta">
+                                    <span class="etapa-duration">1 semana</span>
+                                    <span class="etapa-hours">20 horas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etapa-objective">
+                            <p>Alinhar expectativas, escopo, equipe de trabalho Mentor | Rhodia e responsabilidades para início estruturado do projeto, preparando o terreno para entregas consistentes e planejamento eficiente.</p>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">📝</span>
+                                    <span class="accordion-title">O que será entregue</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Plano de Trabalho formal com cronograma, responsáveis, objetivos e fases do projeto.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">⚙️</span>
+                                    <span class="accordion-title">O que será feito</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Reunião de alinhamento com time de trabalho.</li>
+                                        <li>Definição detalhada do escopo, entregas, equipe de trabalho e cronograma.</li>
+                                        <li>Elaboração e entrega do Plano de Trabalho com as ações de consultoria.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 3.2 -->
+                    <div class="etapa-card" data-etapa="3.2">
+                        <div class="etapa-header">
+                            <div class="etapa-icon">🔍</div>
+                            <div class="etapa-info">
+                                <h3>Etapa 3.2 - Mapeamento do Cenário Atual (Diagnóstico Rápido)</h3>
+                                <div class="etapa-meta">
+                                    <span class="etapa-duration">2 semanas (paralelo à anterior)</span>
+                                    <span class="etapa-hours">60 horas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etapa-objective">
+                            <p>Compreender o cenário atual, mapear processos e identificar oportunidades rápidas de melhoria.</p>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">📝</span>
+                                    <span class="accordion-title">O que será entregue</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Relatório diagnóstico com inventário dos treinamentos atuais, mapeamento dos processos e lista de quick wins priorizadas.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">⚙️</span>
+                                    <span class="accordion-title">O que será feito</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Levantamento dos processos existentes.</li>
+                                        <li>Entrevistas com gestores e colaboradores.</li>
+                                        <li>Inventário de treinamentos atuais e sua taxonomia (área, resp., tema, público etc.).</li>
+                                        <li>Identificação de gaps e oportunidades.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 3.3 -->
+                    <div class="etapa-card" data-etapa="3.3">
+                        <div class="etapa-header">
+                            <div class="etapa-icon">🏗️</div>
+                            <div class="etapa-info">
+                                <h3>Etapa 3.3 - Desenho do Modelo Organizacional para T&D Centralizado</h3>
+                                <div class="etapa-meta">
+                                    <span class="etapa-duration">2 semanas</span>
+                                    <span class="etapa-hours">80 horas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etapa-objective">
+                            <p>Desenhar o modelo organizacional e de governança ideal para o T&D centralizado e integrado.</p>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">📝</span>
+                                    <span class="accordion-title">O que será entregue</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Documento formal com modelo de governança, processos padronizados, matriz de responsabilidades e representações visuais (organogramas, fluxogramas).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">⚙️</span>
+                                    <span class="accordion-title">O que será feito</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Definição clara de papéis e responsabilidades na estrutura de T&D.</li>
+                                        <li>Desenvolvimento da matriz de responsabilidades.</li>
+                                        <li>Padronização dos processos, trilhas de capacitação e fluxos de decisão.</li>
+                                        <li>Proposta de mecanismos estruturados para gestão do todo.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 3.4 -->
+                    <div class="etapa-card" data-etapa="3.4">
+                        <div class="etapa-header">
+                            <div class="etapa-icon">📋</div>
+                            <div class="etapa-info">
+                                <h3>Etapa 3.4 - Plano de Implementação</h3>
+                                <div class="etapa-meta">
+                                    <span class="etapa-duration">2 semanas</span>
+                                    <span class="etapa-hours">60 horas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etapa-objective">
+                            <p>Facilitar a execução do modelo definido, priorizando entregas rápidas e torná-lo gerenciável.</p>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">📝</span>
+                                    <span class="accordion-title">O que será entregue</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Plano de ação operacional com cronograma, materiais de apoio e indicadores.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">⚙️</span>
+                                    <span class="accordion-title">O que será feito</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Elaboração do roadmap com ações, responsáveis e prazos.</li>
+                                        <li>Detalhamento das quick wins para ganhos de curto prazo.</li>
+                                        <li>Definição de indicadores e procedimentos para acompanhamento e ajuste.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 3.5 -->
+                    <div class="etapa-card" data-etapa="3.5">
+                        <div class="etapa-header">
+                            <div class="etapa-icon">💻</div>
+                            <div class="etapa-info">
+                                <h3>Etapa 3.5 - Especificação da Ferramenta LMS</h3>
+                                <div class="etapa-meta">
+                                    <span class="etapa-duration">2 semanas (paralelo às anteriores)</span>
+                                    <span class="etapa-hours">40 horas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etapa-objective">
+                            <p>Garantir que a solução tecnológica (LMS- Learning Management System) a ser adotada cumpra todos os requisitos de centralização, rastreabilidade e facilidade de uso para T&D.</p>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">📝</span>
+                                    <span class="accordion-title">O que será entregue</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Documento de especificação detalhada do LMS.</li>
+                                        <li>Parecer técnico e suporte no processo de contratação/implantação do LMS.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">⚙️</span>
+                                    <span class="accordion-title">O que será feito</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Levantamento detalhado de necessidades técnicas e funcionais junto às áreas.</li>
+                                        <li>Definição de especificações técnicas.</li>
+                                        <li>Elaboração de requisitos para especificação técnica da ferramenta (ex: integração, trilhas, dashboards, registros de mentoria/on the job).</li>
+                                        <li>Suporte na avaliação e seleção de fornecedores ou customização do sistema.</li>
+                                        <li>Apoio no planejamento de implantação e treinamento de usuários.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 3.6 -->
+                    <div class="etapa-card" data-etapa="3.6">
+                        <div class="etapa-header">
+                            <div class="etapa-icon">📚</div>
+                            <div class="etapa-info">
+                                <h3>Etapa 3.6 - Diretrizes para Gestão do Conhecimento</h3>
+                                <div class="etapa-meta">
+                                    <span class="etapa-duration">2 semanas</span>
+                                    <span class="etapa-hours">40 horas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etapa-objective">
+                            <p>Estabelecer diretrizes práticas e materiais que possibilitem à equipe Rhodia/Solvay implementar mecanismos eficazes para preservar e transferir o conhecimento crítico, evitando perdas causadas principalmente pela aposentadoria de especialistas com know-how relevante.</p>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">📝</span>
+                                    <span class="accordion-title">O que será entregue</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Kit de diretrizes e templates (formulários, manuais, roteiros) para implementação da gestão do conhecimento pela equipe interna.</li>
+                                        <li>Documento orientativo com instruções práticas para governança da gestão do conhecimento.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">⚙️</span>
+                                    <span class="accordion-title">O que será feito</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Identificação do conhecimento crítico e dos especialistas-chave junto à equipe.</li>
+                                        <li>Desenvolvimento de formulários e modelos para entrevistas com especialistas, registro de processos e boas práticas.</li>
+                                        <li>Definição de diretrizes claras para programas de mentoria e coaching estruturados.</li>
+                                        <li>Elaboração de um manual executivo com orientações passo a passo para atualização contínua dos registros e acervos de conhecimento.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 3.7 -->
+                    <div class="etapa-card optional-card" data-etapa="3.7">
+                        <div class="etapa-header">
+                            <div class="etapa-icon">🤝</div>
+                            <div class="etapa-info">
+                                <h3>Etapa 3.7 - Implementação Assistida (Opcional)</h3>
+                                <div class="etapa-meta">
+                                    <span class="etapa-duration">A ser definido</span>
+                                    <span class="etapa-hours">30h/mês</span>
+                                    <span class="optional-badge">Opcional</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etapa-objective">
+                            <p>Acompanhar e apoiar ativamente a equipe interna durante as primeiras fases de implementação das soluções propostas, garantindo adesão e ajustando aspectos críticos no dia a dia.</p>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">📝</span>
+                                    <span class="accordion-title">O que será entregue</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Relatórios periódicos de acompanhamento com sugestões de melhoria.</li>
+                                        <li>Lista de ajustes realizados e recomendações para autonomia da equipe.</li>
+                                        <li>Sessões de orientação (presenciais ou online) para grupos-chave.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <button class="accordion-toggle" aria-expanded="false">
+                                    <span class="accordion-icon">⚙️</span>
+                                    <span class="accordion-title">O que será feito</span>
+                                    <span class="accordion-chevron">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Acompanhamento semanal (remoto) da execução dos processos definidos.</li>
+                                        <li>Suporte direto na operacionalização das rotinas padronizadas de treinamento, gestão do conhecimento e uso do LMS.</li>
+                                        <li>Orientação e solução de dúvidas conforme surgem barreiras práticas.</li>
+                                        <li>Ajustes táticos no modelo e instrumentos conforme necessidades reais emergentes.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Cronograma Section -->
+        <section id="cronograma" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Cronograma do Projeto</h2>
+                    <p>8 semanas de duração total com etapas paralelas otimizadas</p>
+                </div>
+                
+                <!-- Mobile Timeline View -->
+                <div class="mobile-timeline">
+                    <div class="mobile-week">
+                        <h4>Semanas 1-2</h4>
+                        <div class="mobile-tasks">
+                            <div class="mobile-task kickoff">Kickoff</div>
+                            <div class="mobile-task diagnostico">Diagnóstico (início)</div>
+                        </div>
+                    </div>
+                    <div class="mobile-week">
+                        <h4>Semanas 3-4</h4>
+                        <div class="mobile-tasks">
+                            <div class="mobile-task diagnostico">Diagnóstico (continuação)</div>
+                            <div class="mobile-task organizacao">Organização</div>
+                            <div class="mobile-task lms">LMS (início)</div>
+                        </div>
+                    </div>
+                    <div class="mobile-week">
+                        <h4>Semanas 5-6</h4>
+                        <div class="mobile-tasks">
+                            <div class="mobile-task implementacao">Implementação</div>
+                            <div class="mobile-task lms">LMS (continuação)</div>
+                        </div>
+                    </div>
+                    <div class="mobile-week">
+                        <h4>Semanas 7-8</h4>
+                        <div class="mobile-tasks">
+                            <div class="mobile-task conhecimento">Gestão do Conhecimento</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Gantt Chart -->
+                <div class="gantt-container">
+                    <div class="gantt-header">
+                        <div class="gantt-task-header">Etapas</div>
+                        <div class="gantt-timeline-header">
+                            <div class="week">Sem 1</div>
+                            <div class="week">Sem 2</div>
+                            <div class="week">Sem 3</div>
+                            <div class="week">Sem 4</div>
+                            <div class="week">Sem 5</div>
+                            <div class="week">Sem 6</div>
+                            <div class="week">Sem 7</div>
+                            <div class="week">Sem 8</div>
+                        </div>
+                    </div>
+                    
+                    <div class="gantt-body">
+                        <div class="gantt-row">
+                            <div class="gantt-task">1. Kickoff</div>
+                            <div class="gantt-timeline">
+                                <div class="gantt-bar kickoff-bar" data-tooltip="Kickoff: 1 semana"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="gantt-row">
+                            <div class="gantt-task">2. Diagnóstico</div>
+                            <div class="gantt-timeline">
+                                <div class="gantt-bar diagnostico-bar" data-tooltip="Diagnóstico: 3 semanas (paralelo)"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="gantt-row">
+                            <div class="gantt-task">3. Organização</div>
+                            <div class="gantt-timeline">
+                                <div class="gantt-bar organizacao-bar" data-tooltip="Organização: 2 semanas"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="gantt-row">
+                            <div class="gantt-task">4. Implementação</div>
+                            <div class="gantt-timeline">
+                                <div class="gantt-bar implementacao-bar" data-tooltip="Implementação: 2 semanas"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="gantt-row">
+                            <div class="gantt-task">5. LMS</div>
+                            <div class="gantt-timeline">
+                                <div class="gantt-bar lms-bar" data-tooltip="LMS: 4 semanas (paralelo)"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="gantt-row">
+                            <div class="gantt-task">6. Conhecimento</div>
+                            <div class="gantt-timeline">
+                                <div class="gantt-bar conhecimento-bar" data-tooltip="Conhecimento: 2 semanas"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investimento Section -->
+        <section id="investimento" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Investimento</h2>
+                    <p>Distribuição de horas por etapa do projeto</p>
+                </div>
+                
+                <div class="investment-overview">
+                    <div class="investment-summary">
+                        <div class="total-value">300 horas</div>
+                        <div class="total-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Duração:</span>
+                                <span class="detail-value">8 semanas</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Total de etapas:</span>
+                                <span class="detail-value">7 etapas</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container" style="height: 400px; position: relative;">
+                        <canvas id="hoursChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="investment-breakdown">
+                    <h3>Detalhamento por Etapa</h3>
+                    <div class="hours-table">
+                        <div class="table-header">
+                            <div class="table-cell table-header-cell">Etapa</div>
+                            <div class="table-cell table-header-cell">Horas Estimadas</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">3.1 Reunião de Kickoff</div>
+                            <div class="table-cell hours-cell">20 h</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">3.2 Diagnóstico Rápido</div>
+                            <div class="table-cell hours-cell">60 h</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">3.3 Proposta de Organização</div>
+                            <div class="table-cell hours-cell">80 h</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">3.4 Plano de Implementação</div>
+                            <div class="table-cell hours-cell">60 h</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">3.5 Especificação do LMS</div>
+                            <div class="table-cell hours-cell">40 h</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">3.6 Diretrizes para Gestão do Conhecimento</div>
+                            <div class="table-cell hours-cell">40 h</div>
+                        </div>
+                        <div class="table-row optional">
+                            <div class="table-cell">3.7 Implementação Assistida (opcional)</div>
+                            <div class="table-cell hours-cell">30 h/mês</div>
+                        </div>
+                        <div class="table-row total">
+                            <div class="table-cell"><strong>Total (sem etapa opcional)</strong></div>
+                            <div class="table-cell hours-cell"><strong>300 h</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultados Section -->
+        <section id="resultados" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Resultados Esperados</h2>
+                    <p>Benefícios e impactos do projeto para a Rhodia-Solvay</p>
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-icon">🎯</div>
+                            <h3>Gestão Centralizada</h3>
+                        </div>
+                        <p>Organização centralizada e gestão do todo eficaz com visibilidade completa dos processos T&D.</p>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <span class="metric-value">100%</span>
+                                <span class="metric-label">dos processos mapeados</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-icon">✅</div>
+                            <h3>Compliance</h3>
+                        </div>
+                        <p>Facilidade para auditorias com rastreabilidade completa e conformidade regulatória.</p>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <span class="metric-value">80%</span>
+                                <span class="metric-label">redução no tempo de auditoria</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-icon">⚙️</div>
+                            <h3>Padronização</h3>
+                        </div>
+                        <p>Processos padronizados e documentados com eficiência operacional aumentada.</p>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <span class="metric-value">360°</span>
+                                <span class="metric-label">governança implementada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <div class="cta-content">
+                        <h3>Pronto para Transformar seu T&D?</h3>
+                        <p>Estamos prontos para iniciar este projeto transformador. Vamos agendar uma reunião para alinhar os detalhes finais e dar o próximo passo juntos?</p>
+                        <div class="cta-buttons">
+                            <button class="btn btn--primary btn--lg cta-accept">
+                                ✅ Aceitar Proposta
+                            </button>
+                            <button class="btn btn--outline btn--lg cta-meeting">
+                                📅 Agendar Reunião
+                            </button>
+                        </div>
+                        <div class="contact-info">
+                            <p><strong>Mentor Interativa</strong> • mentor@mentorinterativa.com.br</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Carregando proposta...</p>
+        </div>
+    </div>
+
+    <!-- PWA Install prompt -->
+    <div id="pwa-install" class="pwa-install hidden">
+        <div class="pwa-content">
+            <h4>Instalar Proposta</h4>
+            <p>Adicione esta proposta à sua tela inicial para acesso rápido</p>
+            <div class="pwa-buttons">
+                <button class="btn btn--primary btn--sm" id="pwa-install-btn">Instalar</button>
+                <button class="btn btn--outline btn--sm" id="pwa-dismiss-btn">Não agora</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
