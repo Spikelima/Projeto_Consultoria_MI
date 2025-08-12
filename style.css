@@ -1124,39 +1124,9 @@ select.form-control {
   font-size: 2rem;
 }
 
-.impact-badge {
-  padding: var(--space-4) var(--space-8);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-}
-
-.impact-badge.high {
-  background: rgba(255, 107, 107, 0.1);
-  color: #FF6B6B;
-  border: 1px solid rgba(255, 107, 107, 0.3);
-}
-
-.impact-badge.medium {
-  background: rgba(255, 140, 0, 0.1);
-  color: #FF8C00;
-  border: 1px solid rgba(255, 140, 0, 0.3);
-}
-
 .challenge-card h3 {
   color: var(--color-text);
   margin-bottom: var(--space-16);
-}
-
-.challenge-metrics {
-  background: var(--color-bg-3);
-  padding: var(--space-8) var(--space-12);
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  margin-top: var(--space-16);
-  text-align: center;
 }
 
 /* Objectives Section */
@@ -1194,6 +1164,51 @@ select.form-control {
   font-size: 1.5rem;
   flex-shrink: 0;
   margin-top: var(--space-2);
+}
+
+/* Escopo Section Styles */
+.escopo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.escopo-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  transition: all var(--duration-normal) var(--ease-standard);
+  position: relative;
+}
+
+.escopo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.escopo-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.escopo-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  padding: var(--space-8);
+  background: var(--color-bg-1);
+  border-radius: var(--radius-base);
+  margin-top: var(--space-4);
+}
+
+.escopo-card h3 {
+  color: var(--color-text);
+  margin: 0;
+  font-size: var(--font-size-lg);
+  line-height: 1.4;
 }
 
 /* Project Overview Timeline - New Section */
@@ -1269,10 +1284,6 @@ select.form-control {
   transform: translateY(-2px);
 }
 
-.stage-item.optional {
-  opacity: 0.7;
-}
-
 .stage-marker {
   position: relative;
   width: 50px;
@@ -1328,10 +1339,6 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.stage-item.optional + .stage-connector {
-  background: linear-gradient(90deg, rgba(255, 140, 0, 0.3), rgba(255, 165, 0, 0.3));
-}
-
 /* Etapas Container */
 .etapas-container {
   display: flex;
@@ -1354,11 +1361,6 @@ select.form-control {
 .etapa-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-}
-
-.optional-card {
-  border-left: 4px solid #FFA500;
-  background: rgba(255, 140, 0, 0.02);
 }
 
 .etapa-header {
@@ -1408,16 +1410,6 @@ select.form-control {
   border-radius: var(--radius-base);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
-}
-
-.optional-badge {
-  background: var(--color-bg-3);
-  color: var(--color-success);
-  padding: var(--space-4) var(--space-8);
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
 }
 
 .etapa-objective {
@@ -1519,147 +1511,6 @@ select.form-control {
   margin-bottom: 0;
 }
 
-/* Mobile Timeline */
-.mobile-timeline {
-  display: none;
-}
-
-.mobile-week {
-  margin-bottom: var(--space-24);
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: var(--space-20);
-  border: 1px solid var(--color-card-border);
-}
-
-.mobile-week h4 {
-  color: var(--color-text);
-  margin-bottom: var(--space-16);
-  font-size: var(--font-size-lg);
-}
-
-.mobile-tasks {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-}
-
-.mobile-task {
-  padding: var(--space-8) var(--space-12);
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  text-align: center;
-}
-
-.mobile-task.kickoff { background: #FF6B35; color: white; }
-.mobile-task.diagnostico { background: #F7931E; color: white; }
-.mobile-task.organizacao { background: #FFB81C; color: black; }
-.mobile-task.implementacao { background: #FFCD00; color: black; }
-.mobile-task.lms { background: #F7931E; color: white; }
-.mobile-task.conhecimento { background: #FF6B35; color: white; }
-
-/* Desktop Gantt Chart */
-.gantt-container {
-  background: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  max-width: 100%;
-  margin: 0 auto;
-  box-shadow: var(--shadow-sm);
-}
-
-.gantt-header {
-  display: flex;
-  background: var(--color-bg-1);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.gantt-task-header {
-  width: 160px;
-  padding: var(--space-16);
-  font-weight: var(--font-weight-semibold);
-  border-right: 1px solid var(--color-border);
-  font-size: var(--font-size-sm);
-}
-
-.gantt-timeline-header {
-  display: flex;
-  flex: 1;
-}
-
-.week {
-  flex: 1;
-  padding: var(--space-16) var(--space-8);
-  text-align: center;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-xs);
-  border-right: 1px solid var(--color-border);
-}
-
-.week:last-child {
-  border-right: none;
-}
-
-.gantt-body {
-  background: var(--color-surface);
-}
-
-.gantt-row {
-  display: flex;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.gantt-row:last-child {
-  border-bottom: none;
-}
-
-.gantt-task {
-  width: 160px;
-  padding: var(--space-16);
-  border-right: 1px solid var(--color-border);
-  font-size: var(--font-size-xs);
-  display: flex;
-  align-items: center;
-}
-
-.gantt-timeline {
-  flex: 1;
-  position: relative;
-  height: 60px;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent calc(12.5% - 1px),
-    var(--color-border) calc(12.5% - 1px),
-    var(--color-border) 12.5%
-  );
-}
-
-.gantt-bar {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 24px;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-standard);
-}
-
-.gantt-bar:hover {
-  transform: translateY(-50%) scale(1.05);
-  box-shadow: var(--shadow-md);
-}
-
-.kickoff-bar { left: 0%; width: 12.5%; background: #FF6B35; }
-.diagnostico-bar { left: 0%; width: 37.5%; background: #F7931E; }
-.organizacao-bar { left: 25%; width: 25%; background: #FFB81C; }
-.implementacao-bar { left: 50%; width: 25%; background: #FFCD00; }
-.lms-bar { left: 25%; width: 50%; background: #F7931E; }
-.conhecimento-bar { left: 75%; width: 25%; background: #FF6B35; }
-
 /* Investment Section - Hours Only */
 .investment-overview {
   display: grid;
@@ -1678,7 +1529,7 @@ select.form-control {
 }
 
 .total-value {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(2rem, 6vw, 3rem);
   font-weight: var(--font-weight-bold);
   background: linear-gradient(135deg, #FF8C00, #FFA500);
   -webkit-background-clip: text;
@@ -1754,11 +1605,6 @@ select.form-control {
   border-bottom: none;
 }
 
-.table-row.optional {
-  background: rgba(255, 140, 0, 0.05);
-  border-left: 3px solid #FF8C00;
-}
-
 .table-row.total {
   background: var(--color-bg-2);
   border-top: 2px solid #FF8C00;
@@ -1827,32 +1673,6 @@ select.form-control {
 .result-card p {
   line-height: 1.6;
   margin-bottom: var(--space-20);
-}
-
-.result-metrics {
-  background: var(--color-bg-3);
-  padding: var(--space-16);
-  border-radius: var(--radius-base);
-  border: 1px solid var(--color-border);
-}
-
-.metric {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.metric-value {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-success);
-}
-
-.metric-label {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  text-align: center;
 }
 
 /* CTA Section */
@@ -1995,6 +1815,10 @@ select.form-control {
     grid-template-columns: repeat(2, 1fr);
   }
   
+  .escopo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .results-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2033,14 +1857,6 @@ select.form-control {
     grid-template-columns: 1fr 1fr;
   }
   
-  .mobile-timeline {
-    display: none;
-  }
-  
-  .gantt-container {
-    display: block;
-  }
-  
   .cta-buttons {
     flex-wrap: nowrap;
   }
@@ -2067,16 +1883,16 @@ select.form-control {
     grid-template-columns: repeat(3, 1fr);
   }
   
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .escopo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .results-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .gantt-task-header {
-    width: 200px;
-  }
-  
-  .gantt-task {
-    width: 200px;
   }
 }
 
@@ -2086,14 +1902,6 @@ select.form-control {
   }
   
   .desktop-nav {
-    display: none;
-  }
-  
-  .mobile-timeline {
-    display: block;
-  }
-  
-  .gantt-container {
     display: none;
   }
   
@@ -2172,7 +1980,8 @@ select.form-control {
   .challenge-card:hover,
   .result-card:hover,
   .table-row:hover,
-  .etapa-card:hover {
+  .etapa-card:hover,
+  .escopo-card:hover {
     transform: none;
     background: var(--color-surface);
   }
@@ -2184,7 +1993,8 @@ select.form-control {
   .canvas-card:active,
   .challenge-card:active,
   .result-card:active,
-  .etapa-card:active {
+  .etapa-card:active,
+  .escopo-card:active {
     transform: translateY(-2px);
   }
 }
@@ -2217,14 +2027,6 @@ select.form-control {
     display: none !important;
   }
   
-  .gantt-container {
-    display: block !important;
-  }
-  
-  .mobile-timeline {
-    display: none !important;
-  }
-  
   .accordion-content {
     max-height: none !important;
     padding: var(--space-16) var(--space-20) var(--space-20) !important;
@@ -2251,7 +2053,8 @@ select.form-control {
 .canvas-card,
 .challenge-card,
 .result-card,
-.etapa-card {
+.etapa-card,
+.escopo-card {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
@@ -2260,7 +2063,8 @@ select.form-control {
 .section.active .canvas-card,
 .section.active .challenge-card,
 .section.active .result-card,
-.section.active .etapa-card {
+.section.active .etapa-card,
+.section.active .escopo-card {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2275,13 +2079,18 @@ select.form-control {
 .challenge-card:nth-child(2) { transition-delay: 0.2s; }
 .challenge-card:nth-child(3) { transition-delay: 0.3s; }
 
+.escopo-card:nth-child(1) { transition-delay: 0.1s; }
+.escopo-card:nth-child(2) { transition-delay: 0.2s; }
+.escopo-card:nth-child(3) { transition-delay: 0.3s; }
+.escopo-card:nth-child(4) { transition-delay: 0.4s; }
+.escopo-card:nth-child(5) { transition-delay: 0.5s; }
+
 .etapa-card:nth-child(1) { transition-delay: 0.1s; }
 .etapa-card:nth-child(2) { transition-delay: 0.2s; }
 .etapa-card:nth-child(3) { transition-delay: 0.3s; }
 .etapa-card:nth-child(4) { transition-delay: 0.4s; }
 .etapa-card:nth-child(5) { transition-delay: 0.5s; }
 .etapa-card:nth-child(6) { transition-delay: 0.6s; }
-.etapa-card:nth-child(7) { transition-delay: 0.7s; }
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
@@ -2300,6 +2109,7 @@ select.form-control {
   .challenge-card,
   .result-card,
   .etapa-card,
+  .escopo-card,
   .project-overview-timeline,
   .hours-table {
     border-width: 2px;

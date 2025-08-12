@@ -1,4 +1,4 @@
-// Mobile-First Responsive Application for Mentor Interativa Proposal - WITH ACCORDION FUNCTIONALITY - FIXED NAVIGATION
+// Mobile-First Responsive Application for Mentor Interativa Proposal - UPDATED VERSION
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Mentor Interativa Proposal - Inicializando aplicação...');
@@ -435,22 +435,17 @@ function initSectionSpecific(sectionId) {
             }, 200);
             break;
         case 'cronograma':
-            initGanttAnimations();
-            break;
-        case 'escopo':
-            // Highlight project overview section
-            const overview = document.querySelector('.project-overview-timeline');
-            if (overview) {
-                overview.style.animation = 'pulse 0.6s ease-in-out';
-                setTimeout(() => {
-                    overview.style.animation = '';
-                }, 600);
-            }
-            
             // Re-initialize accordions if needed
             const accordions = document.querySelectorAll('.accordion-toggle');
             if (accordions.length > 0) {
-                console.log(`Re-verificando ${accordions.length} accordions na seção escopo`);
+                console.log(`Re-verificando ${accordions.length} accordions na seção cronograma`);
+            }
+            break;
+        case 'escopo':
+            // Highlight escopo section
+            const escopoCards = document.querySelectorAll('.escopo-card');
+            if (escopoCards.length > 0) {
+                console.log(`Inicializando ${escopoCards.length} cards de escopo`);
             }
             break;
         default:
@@ -461,7 +456,7 @@ function initSectionSpecific(sectionId) {
 // Section animations
 function triggerSectionAnimations(section) {
     const animatedElements = section.querySelectorAll(
-        '.canvas-card, .challenge-card, .etapa-card, .result-card, .project-overview-timeline, .table-row'
+        '.canvas-card, .challenge-card, .etapa-card, .result-card, .escopo-card, .project-overview-timeline, .table-row'
     );
     
     animatedElements.forEach((element, index) => {
@@ -477,7 +472,7 @@ function triggerSectionAnimations(section) {
     });
 }
 
-// Hours chart initialization (replacing investment chart) - FIXED VERSION
+// Hours chart initialization - UPDATED DATA FOR 290h TOTAL AND LMS 30h
 function initHoursChart() {
     const ctx = document.getElementById('hoursChart');
     if (!ctx) {
@@ -485,7 +480,7 @@ function initHoursChart() {
         return;
     }
     
-    console.log('Inicializando gráfico de distribuição de horas...');
+    console.log('Inicializando gráfico de distribuição de horas (290h total)...');
     
     // Destroy existing chart
     if (window.hoursChartInstance) {
@@ -503,7 +498,7 @@ function initHoursChart() {
             'Conhecimento'
         ],
         datasets: [{
-            data: [20, 60, 80, 60, 40, 40],
+            data: [20, 60, 80, 60, 30, 40], // Updated: LMS changed from 40 to 30
             backgroundColor: [
                 '#1FB8CD',
                 '#FFC185',
@@ -589,34 +584,17 @@ function initHoursChart() {
             data: data,
             options: options
         });
-        console.log('✅ Gráfico de horas inicializado com sucesso');
+        console.log('✅ Gráfico de horas inicializado com sucesso (290h total)');
     } catch (error) {
         console.error('❌ Erro ao inicializar gráfico:', error);
     }
-}
-
-// Gantt chart animations
-function initGanttAnimations() {
-    const ganttBars = document.querySelectorAll('.gantt-bar');
-    
-    ganttBars.forEach((bar, index) => {
-        // Reset animation
-        bar.style.transform = 'translateY(-50%) scaleX(0)';
-        bar.style.transformOrigin = 'left center';
-        bar.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
-        
-        // Animate after delay
-        setTimeout(() => {
-            bar.style.transform = 'translateY(-50%) scaleX(1)';
-        }, index * 200 + 300);
-    });
 }
 
 // Interactive elements and touch handling
 function initInteractions() {
     // Enhanced hover/touch effects for cards
     const interactiveElements = document.querySelectorAll(
-        '.canvas-card, .challenge-card, .result-card, .etapa-card, .project-overview-timeline'
+        '.canvas-card, .challenge-card, .result-card, .etapa-card, .escopo-card, .project-overview-timeline'
     );
     
     interactiveElements.forEach(element => {
@@ -659,33 +637,8 @@ function initInteractions() {
         });
         
         row.addEventListener('mouseleave', function() {
-            if (!this.classList.contains('total') && !this.classList.contains('optional')) {
+            if (!this.classList.contains('total')) {
                 this.style.background = '';
-            }
-        });
-    });
-    
-    // Gantt bar tooltips and interactions
-    const ganttBars = document.querySelectorAll('.gantt-bar');
-    ganttBars.forEach(bar => {
-        bar.addEventListener('mouseenter', function() {
-            const tooltip = this.getAttribute('data-tooltip');
-            if (tooltip && window.matchMedia('(hover: hover)').matches) {
-                showTooltip(this, tooltip);
-            }
-        });
-        
-        bar.addEventListener('mouseleave', function() {
-            hideTooltip();
-        });
-        
-        // Touch handling for mobile
-        bar.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            const tooltip = this.getAttribute('data-tooltip');
-            if (tooltip) {
-                showTooltip(this, tooltip);
-                setTimeout(hideTooltip, 2000);
             }
         });
     });
@@ -697,7 +650,7 @@ function initInteractions() {
     window.addEventListener('resize', debounce(handleResize, 250));
 }
 
-// CTA button functionality
+// CTA button functionality - UPDATED EMAIL
 function initCTAButtons() {
     const acceptBtn = document.querySelector('.cta-accept');
     const meetingBtn = document.querySelector('.cta-meeting');
@@ -740,7 +693,7 @@ function initCTAButtons() {
             
             showNotification('📅 Abrindo ferramenta de agendamento...', 'info');
             
-            // Open email client after delay
+            // Open email client after delay - UPDATED EMAIL
             setTimeout(() => {
                 const emailSubject = encodeURIComponent('Agendamento - Proposta Rhodia-Solvay');
                 const emailBody = encodeURIComponent(
@@ -754,54 +707,9 @@ function initCTAButtons() {
                     'Obrigado!'
                 );
                 
-                window.open(`mailto:contato@mentorinterativa.com.br?subject=${emailSubject}&body=${emailBody}`, '_blank');
+                window.open(`mailto:mentor@mentorinterativa.com.br?subject=${emailSubject}&body=${emailBody}`, '_blank');
             }, 500);
         });
-    }
-}
-
-// Tooltip system
-function showTooltip(element, text) {
-    hideTooltip(); // Remove existing tooltip
-    
-    const tooltip = document.createElement('div');
-    tooltip.id = 'custom-tooltip';
-    tooltip.textContent = text;
-    
-    Object.assign(tooltip.style, {
-        position: 'absolute',
-        background: 'rgba(0,0,0,0.9)',
-        color: 'white',
-        padding: '8px 12px',
-        borderRadius: '6px',
-        fontSize: '12px',
-        zIndex: '10000',
-        pointerEvents: 'none',
-        whiteSpace: 'nowrap',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
-    });
-    
-    document.body.appendChild(tooltip);
-    
-    const rect = element.getBoundingClientRect();
-    const tooltipRect = tooltip.getBoundingClientRect();
-    
-    tooltip.style.left = `${rect.left + (rect.width / 2) - (tooltipRect.width / 2)}px`;
-    tooltip.style.top = `${rect.top - tooltipRect.height - 8}px`;
-    
-    // Ensure tooltip stays within viewport
-    const tooltipLeft = parseInt(tooltip.style.left);
-    if (tooltipLeft < 10) {
-        tooltip.style.left = '10px';
-    } else if (tooltipLeft + tooltipRect.width > window.innerWidth - 10) {
-        tooltip.style.left = `${window.innerWidth - tooltipRect.width - 10}px`;
-    }
-}
-
-function hideTooltip() {
-    const existingTooltip = document.getElementById('custom-tooltip');
-    if (existingTooltip) {
-        existingTooltip.remove();
     }
 }
 
@@ -1045,9 +953,6 @@ function handleResize() {
         }, 100);
     }
     
-    // Hide tooltips on resize
-    hideTooltip();
-    
     // Close mobile menu on resize to desktop
     if (window.innerWidth >= 768) {
         const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -1123,7 +1028,6 @@ function addDynamicStyles() {
         .table-row:nth-child(5) { animation-delay: 0.5s; }
         .table-row:nth-child(6) { animation-delay: 0.6s; }
         .table-row:nth-child(7) { animation-delay: 0.7s; }
-        .table-row:nth-child(8) { animation-delay: 0.8s; }
         
         @keyframes slideInFromLeft {
             from {
@@ -1213,6 +1117,7 @@ window.debugApp = function() {
     console.log('Accordions encontrados:', document.querySelectorAll('.accordion-toggle').length);
     console.log('Timeline stages encontrados:', document.querySelectorAll('.stage-item').length);
     console.log('Quick nav buttons encontrados:', quickNavButtons.length);
+    console.log('Total de horas no gráfico:', window.hoursChartInstance?.data?.datasets?.[0]?.data?.reduce((a, b) => a + b, 0) || 'N/A');
     
     // Test quick nav buttons
     quickNavButtons.forEach((btn, index) => {
@@ -1229,6 +1134,10 @@ window.navigationInitialized = true;
 
 console.log('📱 Aplicação mobile-first carregada. Use debugApp() para debug.');
 console.log('🚀 Mentor Interativa - Proposta Rhodia-Solvay ready!');
-console.log('✅ Alterações implementadas: Visão Geral com timeline + Accordions recolhíveis');
-console.log('🔧 NAVEGAÇÃO TOTALMENTE CORRIGIDA - Todos os botões funcionais');
-console.log('🚨 BUGS CORRIGIDOS: Menu responsivo + Botões quick nav funcionais');
+console.log('✅ ALTERAÇÕES IMPLEMENTADAS:');
+console.log('   - Total de horas: 300h → 290h');
+console.log('   - LMS: 40h → 30h');
+console.log('   - Email: contato@... → mentor@mentorinterativa.com.br');
+console.log('   - Nova seção Escopo adicionada');
+console.log('   - Etapa 3.7 removida completamente');
+console.log('   - Todas as alterações de texto implementadas');
